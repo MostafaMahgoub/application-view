@@ -1,8 +1,9 @@
+import NavbarSider from "./SiderNavBar/SiderNavBar";
 
 function App() {
   return (
-    <div>
-      test
+    <div className="bg-custom-aliceblue">
+      <NavbarSider />
     </div>
   );
 }

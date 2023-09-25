@@ -4,6 +4,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'custom-aliceblue': '#F0F8FF',
+      },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
       },
