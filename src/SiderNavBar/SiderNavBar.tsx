@@ -10,8 +10,8 @@ import { ReactComponent as File_Document } from '../SiderNavBar/assets/File_Docu
 
 const MyHomeSvgIcon = () => (
   <svg
-    width="16"
-    height="16.34"
+    width="19"
+    height="19"
     viewBox="0 0 18 18"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ const MyHomeSvgIcon = () => (
   </svg>
 );
 
-function NavbarSider() {
+ function NavbarSider() {
     const [collapsed, setCollapsed] = useState(false);
   
     const onCollapse = (collapsed: boolean) => {
@@ -34,16 +34,16 @@ function NavbarSider() {
     };
   
     return (
-      <nav className="bg-white h-screen w-16 flex flex-col items-center rounded-tr-2xl rounded-br-2xl shadow-xl transition-all duration-300 hover:w-64 hover:translate-x-4">
+      <nav className="bg-white h-screen w-16 flex flex-col ... ... items-center ... rounded-tr-2xl rounded-br-2xl shadow-xl transition-all duration-300 hover:w-64 hover:translate-x-4">
         <div className="flex flex-col items-center justify-between px-3 py-7 gap-9 h-full">
-          <Avatar icon={<UserOutlined />} />
+          <Avatar icon={<UserOutlined  />} />
           <MyHomeSvgIcon />
-          <UserGroup />
-          <Calendar />
-          <Communciation />
-          <File_Document />
-          <Notebook />
-          <Heart />
+          <UserGroup width={25} height={25} />
+          <Calendar width={25} height={25} />
+          <Communciation width={25} height={25} />
+          <File_Document width={25} height={25} />
+          <Notebook width={25} height={25} />
+          <Heart width={25} height={25} />
           <div className="mt-auto">
             <SettingOutlined />
           </div>
