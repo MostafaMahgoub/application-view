@@ -157,7 +157,8 @@ const [selectedKey, setSelectedKey] = useState('')
   );
 
   return (
-    <Dropdown overlay={menu}>
+    <Dropdown overlay={menu}
+    trigger={['hover']}>
       <Typography.Link>
         <Space className="bg-white rounded-3xl pr-4 pl-4 h-8 w-60 flex justify-between shadow-lg">
           <p className={`text-blue-600 text-xs font-poppins font-bold leading-6 break-words ${selectedKey ? 'text-blue-600' : ''}`}>
