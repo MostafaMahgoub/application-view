@@ -42,7 +42,7 @@ function NavbarSider() {
 
   return (
     <nav className="bg-white h-screen w-16 flex flex-col items-center rounded-tr-2xl rounded-br-2xl shadow-xl transition-all duration-300 hover:w-64 hover:translate-x-4 group">
-      <div className="flex flex-col items-center justify-between px-3 py-7 gap-5 h-full">
+      <div className="flex flex-col items-center justify-between px-3 py-7 gap-3 sm:gap-5 h-full">
         <Avatar icon={<UserOutlined />} />
 
         {navLinks.map((link, index) => (

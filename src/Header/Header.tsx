@@ -21,6 +21,7 @@ function Header() {
       </div>
       <div className="grow" />
       <DropdownMenu />
+      <div className="grow" />
       <div className="flex flex-row gap-3">
       <SquareButton icon={<CP width={25} height={25} />} />
       <SquareButton icon={<UserClose width={25} height={25} />} />
