@@ -6,7 +6,8 @@ import { ReactComponent as Communication } from "../SiderNavBar/assets/Communica
 import { ReactComponent as Notebook } from "../SiderNavBar/assets/Notebook.svg";
 import { ReactComponent as Heart } from "../SiderNavBar/assets/Heart.svg";
 import { ReactComponent as FileDocument } from "../SiderNavBar/assets/File_Document.svg";
-import Settings from "../SiderNavBar/assets/Settings.png";
+import { ReactComponent as Home } from "../SiderNavBar/assets/Home.svg";
+import { ReactComponent as Settings } from "../SiderNavBar/assets/Settings.svg";
 
 function MyHomeSvgIcon() {
   return (
@@ -30,7 +31,7 @@ function MyHomeSvgIcon() {
 
 function NavbarSider() {
   const navLinks = [
-    { icon: <MyHomeSvgIcon />, label: "Dashboard", svg: MyHomeSvgIcon },
+    { icon: <Home />, label: "Dashboard", svg: Home },
     { icon: <UserGroup width={25} height={25} />, label: "User Group", svg: UserGroup },
     { icon: <Calendar width={25} height={25} />, label: "Calendar", svg: Calendar },
     { icon: <Communication width={25} height={25} />, label: "Communication", svg: Communication },
@@ -59,7 +60,7 @@ function NavbarSider() {
         <div className="flex-grow" />
 
         <a className="flex h-12 w-full items-center justify-evenly rounded-lg px-3 text-black transition-all duration-100 ease-in-out hover:bg-[#E9EFFF] hover:text-primary-new hover:opacity-100 group-hover:justify-start group-hover:gap-5">
-          <img src={Settings} alt="Settings" width={25} height={25} />
+          <Settings width={25} height={25} />
           <span className="pointer-events-none font-poppins whitespace-nowrap hidden text-sm text-inherit opacity-0 transition-all duration-300 ease-in-out group-hover:block group-hover:pointer-events-auto group-hover:opacity-100 md:opacity-0">
             Settings
           </span>
