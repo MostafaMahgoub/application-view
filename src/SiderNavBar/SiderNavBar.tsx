@@ -1,12 +1,12 @@
-import { useState } from "react";
 import { Avatar } from "antd";
-import { UserOutlined, SettingOutlined } from "@ant-design/icons";
+import { UserOutlined } from "@ant-design/icons";
 import { ReactComponent as UserGroup } from "../SiderNavBar/assets/Users_Group.svg";
 import { ReactComponent as Calendar } from "../SiderNavBar/assets/Calendar.svg";
-import { ReactComponent as Communciation } from "../SiderNavBar/assets/Communication.svg";
+import { ReactComponent as Communication } from "../SiderNavBar/assets/Communication.svg";
 import { ReactComponent as Notebook } from "../SiderNavBar/assets/Notebook.svg";
 import { ReactComponent as Heart } from "../SiderNavBar/assets/Heart.svg";
 import { ReactComponent as FileDocument } from "../SiderNavBar/assets/File_Document.svg";
+import  Settings  from "../SiderNavBar/assets/Settings.png";
 
 const MyHomeSvgIcon = () => (
   <svg
@@ -26,78 +26,69 @@ const MyHomeSvgIcon = () => (
   </svg>
 );
 
-function NavbarSider() {
-  const [collapsed, setCollapsed] = useState(false);
+interface NavLink {
+  icon: JSX.Element;
+  label: string;
+  svg: React.FC<React.SVGProps<SVGSVGElement>> | string;
+}
 
-  const onCollapse = (collapsed: boolean) => {
-    setCollapsed(collapsed);
-  };
+const SvgIcon: React.FC<{ src: string; width: number; height: number }> = ({ src, width, height }) => {
+  return (
+    <div
+      style={{
+        width: `${width}px`,
+        height: `${height}px`,
+        backgroundImage: `url(${src})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    />
+  );
+};
+
+const NavbarSider: React.FC = () => {
+  const navLinks: NavLink[] = [
+    { icon: <UserOutlined />, label: "Dashboard", svg: MyHomeSvgIcon },
+    { icon: <UserGroup width={25} height={25} />, label: "User Group", svg: UserGroup },
+    { icon: <Calendar width={25} height={25} />, label: "Calendar", svg: Calendar },
+    { icon: <Communication width={25} height={25} />, label: "Communication", svg: Communication },
+    { icon: <FileDocument width={25} height={25} />, label: "File Document", svg: FileDocument },
+    { icon: <Notebook width={25} height={25} />, label: "Notebook", svg: Notebook },
+    { icon: <Heart width={25} height={25} />, label: "Heart", svg: Heart },
+  ];
 
   return (
     <nav className="bg-white h-screen w-16 flex flex-col items-center rounded-tr-2xl rounded-br-2xl shadow-xl transition-all duration-300 hover:w-64 hover:translate-x-4 group">
       <div className="flex flex-col items-center justify-between px-3 py-7 gap-5 h-full">
         <Avatar icon={<UserOutlined />} />
-        <a className="flex h-12 w-full items-center justify-evenly rounded-lg px-3 text-black transition-all duration-100 ease-in-out hover:bg-[#E9EFFF] hover:text-primary-new hover:opacity-100 group-hover:justify-start group-hover:gap-5">
-          <MyHomeSvgIcon />
-          <span className="pointer-events-none font-poppins whitespace-nowrap hidden text-sm text-inherit opacity-0 transition-all duration-300 ease-in-out group-hover:block group-hover:pointer-events-auto group-hover:opacity-100 md:opacity-0">
-            Dashboard
-          </span>
-        </a>
-        <a className="flex h-12 w-full items-center justify-evenly rounded-lg px-3 text-black transition-all duration-100 ease-in-out hover:bg-[#E9EFFF] hover:text-primary-new hover:opacity-100 group-hover:justify-start group-hover:gap-5">
-        <UserGroup width={25} height={25} />
-          <span className="pointer-events-none font-poppins whitespace-nowrap hidden text-sm text-inherit opacity-0 transition-all duration-300 ease-in-out group-hover:block group-hover:pointer-events-auto group-hover:opacity-100 md:opacity-0">
-            User Group
-          </span>
-        </a>
-        <a className="flex h-12 w-full items-center justify-evenly rounded-lg px-3 text-black transition-all duration-100 ease-in-out hover:bg-[#E9EFFF] hover:text-primary-new hover:opacity-100 group-hover:justify-start group-hover:gap-5">
-        <Calendar width={25} height={25} />
-          <span className="pointer-events-none font-poppins whitespace-nowrap hidden text-sm text-inherit opacity-0 transition-all duration-300 ease-in-out group-hover:block group-hover:pointer-events-auto group-hover:opacity-100 md:opacity-0">
-          Calendar
-          </span>
-        </a>
-        <a className="flex h-12 w-full items-center justify-evenly rounded-lg px-3 text-black transition-all duration-100 ease-in-out hover:bg-[#E9EFFF] hover:text-primary-new hover:opacity-100 group-hover:justify-start group-hover:gap-5">
-        <Communciation width={25} height={25} />
-          <span className="pointer-events-none font-poppins whitespace-nowrap hidden text-sm text-inherit opacity-0 transition-all duration-300 ease-in-out group-hover:block group-hover:pointer-events-auto group-hover:opacity-100 md:opacity-0">
-          Communciation
-          </span>
-        </a>
-        <a className="flex h-12 w-full items-center justify-evenly rounded-lg px-3 text-black transition-all duration-100 ease-in-out hover:bg-[#E9EFFF] hover:text-primary-new hover:opacity-100 group-hover:justify-start group-hover:gap-5">
-        <FileDocument width={25} height={25} />
-          <span className="pointer-events-none font-poppins whitespace-nowrap hidden text-sm text-inherit opacity-0 transition-all duration-300 ease-in-out group-hover:block group-hover:pointer-events-auto group-hover:opacity-100 md:opacity-0">
-          File Document
-          </span>
-        </a>
-        <a className="flex h-12 w-full items-center justify-evenly rounded-lg px-3 text-black transition-all duration-100 ease-in-out hover:bg-[#E9EFFF] hover:text-primary-new hover:opacity-100 group-hover:justify-start group-hover:gap-5">
-        <Notebook width={25} height={25} />
-          <span className="pointer-events-none font-poppins whitespace-nowrap hidden text-sm text-inherit opacity-0 transition-all duration-300 ease-in-out group-hover:block group-hover:pointer-events-auto group-hover:opacity-100 md:opacity-0">
-          Notebook
-          </span>
-        </a>
-        <a className="flex h-12 w-full items-center justify-evenly rounded-lg px-3 text-black transition-all duration-100 ease-in-out hover:bg-[#E9EFFF] hover:text-primary-new hover:opacity-100 group-hover:justify-start group-hover:gap-5">
-        <Heart width={25} height={25} />
-          <span className="pointer-events-none font-poppins whitespace-nowrap hidden text-sm text-inherit opacity-0 transition-all duration-300 ease-in-out group-hover:block group-hover:pointer-events-auto group-hover:opacity-100 md:opacity-0">
-          Heart
-          </span>
-        </a>
+
+        {navLinks.map((link, index) => (
+          <a
+            key={index}
+            className="flex h-12 w-full items-center justify-evenly rounded-lg px-3 text-black transition-all duration-100 ease-in-out hover:bg-[#E9EFFF] hover:text-primary-new hover:opacity-100 group-hover:justify-start group-hover:gap-5"
+          >
+            {link.icon}
+            <span className="pointer-events-none font-poppins whitespace-nowrap hidden text-sm text-inherit opacity-0 transition-all duration-300 ease-in-out group-hover:block group-hover:pointer-events-auto group-hover:opacity-100 md:opacity-0">
+              {link.label}
+            </span>
+          </a>
+        ))}
 
         <div className="flex-grow" />
+
         <a className="flex h-12 w-full items-center justify-evenly rounded-lg px-3 text-black transition-all duration-100 ease-in-out hover:bg-[#E9EFFF] hover:text-primary-new hover:opacity-100 group-hover:justify-start group-hover:gap-5">
-        <SettingOutlined  />
+        <img src={Settings} alt="Settings" width={25} height={25} />
           <span className="pointer-events-none font-poppins whitespace-nowrap hidden text-sm text-inherit opacity-0 transition-all duration-300 ease-in-out group-hover:block group-hover:pointer-events-auto group-hover:opacity-100 md:opacity-0">
           Settings
           </span>
         </a>
-          
-          <Avatar
-            className="align-middle bg-blue-300 text-blue-200"
-            size="small"
-          >
-            MR
-          </Avatar>
-        
+
+        <Avatar className="align-middle bg-blue-300 text-blue-200" size="small">
+          MR
+        </Avatar>
       </div>
     </nav>
   );
-}
+};
 
 export default NavbarSider;
