@@ -5,6 +5,8 @@ import { ReactComponent as CP } from "./assets/CP.svg";
 import { ReactComponent as UserCheck } from "./assets/User_Check.svg";
 import { ReactComponent as UserClose } from "./assets/User_Close.svg";
 import { ReactComponent as UserVoice } from "./assets/User_Voice.svg";
+import DropdownButton from "./Components/DropdownButton";
+import { Divider } from 'antd';
 
 function Header() {
   return (
@@ -25,6 +27,8 @@ function Header() {
       <SquareButton icon={<UserCheck width={25} height={25} />} />
       <SquareButton icon={<UserVoice width={25} height={25} />} />
       <SquareButton icon={<Mail width={25} height={25} />} />
+      <Divider type="vertical" className="h-auto" />
+      <DropdownButton />
       </div>
     </header>
   );

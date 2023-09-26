@@ -22,3 +22,14 @@ code {
 .ant-float-btn-content {
   margin-right: 0.4rem;
 }
+
+button.ant-btn.css-dev-only-do-not-override-1vr7spz.ant-btn-default.ant-btn-icon-only.ant-btn-compact-item.ant-btn-compact-last-item.ant-dropdown-trigger {
+  background: #1D5ECD;
+  height: 2.6rem;
+}
+
+button.ant-btn.css-dev-only-do-not-override-1vr7spz.ant-btn-default.ant-btn-compact-item.ant-btn-compact-first-item {
+  display: flex;
+  background: #1D5ECD;
+  height: 2.6rem;
+}

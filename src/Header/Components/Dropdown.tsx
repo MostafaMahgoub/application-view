@@ -56,7 +56,7 @@ function DropdownMenu() {
   return (
     <Dropdown overlay={menu} trigger={["hover"]}>
       <Typography.Link>
-        <Space className="bg-white rounded-xl pr-4 pl-4 h-8 w-60 flex justify-between shadow-lg hover:rounded-br-none">
+        <Space className="bg-white rounded-xl pr-4 pl-4 h-10 w-60 flex justify-between shadow-lg hover:rounded-br-none">
           <p
             className={`text-blue-600 text-xs font-poppins font-bold leading-6 break-words ${
               selectedKey ? "text-blue-600" : ""
