@@ -1,7 +1,9 @@
 import { DownOutlined } from "@ant-design/icons";
 import { Divider, Dropdown, Menu, Space, Typography } from "antd";
+import { useState } from "react";
 
 function DropdownMenu() {
+const [selectedKey, setSelectedKey] = useState('')
   const items = [
     {
       key: "1",
@@ -140,19 +142,25 @@ function DropdownMenu() {
       },
   ];
 
+  const handleMenuClick = (e : any) => {
+    setSelectedKey(e.key);
+  };
+
+  const menu = (
+    <Menu onClick={handleMenuClick}>
+      {items.map((item) => (
+        <Menu.Item key={item.key} className={selectedKey === item.key ? 'bg-blue-100' : ''}>
+          {item.element}
+        </Menu.Item>
+      ))}
+    </Menu>
+  );
+
   return (
-    <Dropdown
-      overlay={
-        <Menu>
-          {items.map((item) => (
-            <Menu.Item key={item.key}>{item.element}</Menu.Item>
-          ))}
-        </Menu>
-      }
-    >
+    <Dropdown overlay={menu}>
       <Typography.Link>
         <Space className="bg-white rounded-3xl pr-4 pl-4 h-8 w-60 flex justify-between shadow-lg">
-          <p className="text-blue-600 text-xs font-poppins font-bold leading-6 break-words">
+          <p className={`text-blue-600 text-xs font-poppins font-bold leading-6 break-words ${selectedKey ? 'text-blue-600' : ''}`}>
             Opportunity Browsing
           </p>
           <DownOutlined className="text-xs" />
