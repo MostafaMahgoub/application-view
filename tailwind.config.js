@@ -13,7 +13,12 @@ module.exports = {
       fontSize: {
         '2xl': '1.2rem',
       },
+      spacing: {
+        '28': '8rem',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-scoped-groups"),
+  ],
 };
