@@ -57,7 +57,7 @@ function NavbarSider() {
           </a>
         ))}
 
-        <div className="flex-grow" />
+        <div className="flex-grow hidden sm:block" />
 
         <a className="flex h-12 w-full items-center justify-evenly rounded-lg px-3 text-black transition-all duration-100 ease-in-out hover:bg-[#E9EFFF] hover:text-primary-new hover:opacity-100 group-hover:justify-start group-hover:gap-5">
           <Settings width={25} height={25} />
