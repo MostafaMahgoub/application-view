@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { Avatar } from 'antd';
-import { UserOutlined , SettingOutlined } from '@ant-design/icons';
-import { ReactComponent as UserGroup } from '../SiderNavBar/assets/Users_Group.svg';
-import { ReactComponent as Calendar } from '../SiderNavBar/assets/Calendar.svg';
-import { ReactComponent as Communciation } from '../SiderNavBar/assets/Communication.svg';
-import { ReactComponent as Notebook } from '../SiderNavBar/assets/Notebook.svg';
-import { ReactComponent as Heart } from '../SiderNavBar/assets/Heart.svg';
-import { ReactComponent as File_Document } from '../SiderNavBar/assets/File_Document.svg';
+import { useState } from "react";
+import { Avatar } from "antd";
+import { UserOutlined, SettingOutlined } from "@ant-design/icons";
+import { ReactComponent as UserGroup } from "../SiderNavBar/assets/Users_Group.svg";
+import { ReactComponent as Calendar } from "../SiderNavBar/assets/Calendar.svg";
+import { ReactComponent as Communciation } from "../SiderNavBar/assets/Communication.svg";
+import { ReactComponent as Notebook } from "../SiderNavBar/assets/Notebook.svg";
+import { ReactComponent as Heart } from "../SiderNavBar/assets/Heart.svg";
+import { ReactComponent as FileDocument } from "../SiderNavBar/assets/File_Document.svg";
 
 const MyHomeSvgIcon = () => (
   <svg
@@ -26,31 +26,41 @@ const MyHomeSvgIcon = () => (
   </svg>
 );
 
- function NavbarSider() {
-    const [collapsed, setCollapsed] = useState(false);
-  
-    const onCollapse = (collapsed: boolean) => {
-      setCollapsed(collapsed);
-    };
-  
-    return (
-      <nav className="bg-white h-screen w-16 flex flex-col ... ... items-center ... rounded-tr-2xl rounded-br-2xl shadow-xl transition-all duration-300 hover:w-64 hover:translate-x-4">
-        <div className="flex flex-col items-center justify-between px-3 py-7 gap-9 h-full">
-          <Avatar icon={<UserOutlined  />} />
+function NavbarSider() {
+  const [collapsed, setCollapsed] = useState(false);
+
+  const onCollapse = (collapsed: boolean) => {
+    setCollapsed(collapsed);
+  };
+
+  return (
+    <nav className="bg-white h-screen w-16 flex flex-col items-center rounded-tr-2xl rounded-br-2xl shadow-xl transition-all duration-300 hover:w-64 hover:translate-x-4 group">
+      <div className="flex flex-col items-center justify-between px-3 py-7 gap-9 h-full">
+        <Avatar icon={<UserOutlined />} />
+        <div className="flex flex-row gap-5 inner-group">
           <MyHomeSvgIcon />
-          <UserGroup width={25} height={25} />
-          <Calendar width={25} height={25} />
-          <Communciation width={25} height={25} />
-          <File_Document width={25} height={25} />
-          <Notebook width={25} height={25} />
-          <Heart width={25} height={25} />
-          <div className="mt-auto">
-            <SettingOutlined />
-          </div>
+          <span className="pointer-events-none font-poppins whitespace-nowrap text-sm text-inherit opacity-0 hidden transition-all duration-300 ease-in-out group-hover:pointer-events-auto group-hover:block group-hover:opacity-100 md:opacity-0 inner-group-hover:bg-blue-500">
+            Dashboard
+          </span>
         </div>
-      </nav>
-    );
-  }
-  
-  export default NavbarSider;
-  
+        <UserGroup width={25} height={25} />
+        <Calendar width={25} height={25} />
+        <Communciation width={25} height={25} />
+        <FileDocument width={25} height={25} />
+        <Notebook width={25} height={25} />
+        <Heart width={25} height={25} />
+        <div className="mt-auto flex flex-col gap-5 items-center">
+          <SettingOutlined />
+          <Avatar
+            className="align-middle bg-blue-300 text-blue-200"
+            size="small"
+          >
+            MR
+          </Avatar>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+export default NavbarSider;
