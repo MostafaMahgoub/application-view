@@ -26,6 +26,7 @@ const MyHomeSvgIcon = () => (
   </svg>
 );
 
+
 interface NavLink {
   icon: JSX.Element;
   label: string;
@@ -48,7 +49,7 @@ const SvgIcon: React.FC<{ src: string; width: number; height: number }> = ({ src
 
 const NavbarSider: React.FC = () => {
   const navLinks: NavLink[] = [
-    { icon: <UserOutlined />, label: "Dashboard", svg: MyHomeSvgIcon },
+    { icon: <MyHomeSvgIcon />, label: "Dashboard", svg: MyHomeSvgIcon },
     { icon: <UserGroup width={25} height={25} />, label: "User Group", svg: UserGroup },
     { icon: <Calendar width={25} height={25} />, label: "Calendar", svg: Calendar },
     { icon: <Communication width={25} height={25} />, label: "Communication", svg: Communication },
