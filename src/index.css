@@ -38,3 +38,7 @@ button.ant-btn.css-dev-only-do-not-override-1vr7spz.ant-btn-default.ant-btn-comp
   background: #1D5ECD;
   height: 2.6rem;
 }
+
+th.ant-table-cell {
+  background: white !important;
+}
