@@ -1,9 +1,10 @@
 import { Input, Tooltip } from "antd";
 import { SearchOutlined, InfoCircleOutlined } from "@ant-design/icons";
+import Filter from "./Filter";
 
 function SearchFilter() {
   return (
-    <div className="w-80 h-fit">
+    <div className="w-80 h-fit flex flex-col gap-5">
       <Input
         className="h-10 border-0"
         placeholder="Serach by name, edu, exp or #tag"
@@ -18,6 +19,7 @@ function SearchFilter() {
           </Tooltip>
         }
       />
+      <Filter />
     </div>
   );
 }
