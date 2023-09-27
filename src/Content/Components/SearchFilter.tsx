@@ -4,7 +4,7 @@ import Filter from "./Filter";
 
 function SearchFilter() {
   return (
-    <div className="w-80 h-fit flex flex-col gap-5">
+    <div className="w-96 h-fit flex flex-col gap-5">
       <Input
         className="h-10 border-0"
         placeholder="Serach by name, edu, exp or #tag"
