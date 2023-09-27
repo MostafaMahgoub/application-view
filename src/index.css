@@ -52,7 +52,10 @@ button.ant-btn.css-1vr7spz.ant-btn-default.ant-btn-icon-only.ant-btn-compact-ite
   display: flex !important;
   background: #1D5ECD !important;
   height: 2.6rem !important;
+  align-items: center;
+  justify-content: center;
 }
+
 
 button.ant-btn.css-dev-only-do-not-override-1vr7spz.ant-btn-default.ant-btn-icon-only.ant-btn-compact-item.ant-btn-compact-last-item.ant-dropdown-trigger {
   background: #1D5ECD !important;
