@@ -66,7 +66,7 @@ function NavbarSider() {
           </span>
         </a>
 
-        <Avatar className="align-middle bg-blue-300 text-blue-200" size="small">
+        <Avatar className="align-middle bg-[#B1CDFD] text-[#D0E1FF]" size="small">
           MR
         </Avatar>
       </div>

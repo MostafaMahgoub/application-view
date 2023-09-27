@@ -1,9 +1,10 @@
 import React from "react";
 import { Divider, Table } from "antd";
+import CandidateCard from "./CandidateCard";
 
 interface DataItem {
   key: string;
-  name: JSX.Element;
+  Candidate: JSX.Element;
 }
 
 const columns = [
@@ -41,23 +42,23 @@ const columns = [
         </div>
       </div>
     ),
-    dataIndex: "name",
-    render: (name: JSX.Element) => <a>{name}</a>,
+    dataIndex: "Candidate",
+    render: (Candidate: JSX.Element) => <a>{Candidate}</a>,
   },
 ];
 
 const data: DataItem[] = [
   {
     key: "1",
-    name: <span style={{ color: "blue" }}>John Brown</span>,
+    Candidate: <CandidateCard />,
   },
   {
     key: "2",
-    name: <span style={{ color: "green" }}>Jim Green</span>,
+    Candidate: <span style={{ color: "green" }}>Jim Green</span>,
   },
   {
     key: "3",
-    name: <span style={{ color: "red" }}>Joe Black</span>,
+    Candidate: <span style={{ color: "red" }}>Joe Black</span>,
   },
 ];
 
