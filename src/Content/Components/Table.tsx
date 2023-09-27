@@ -56,9 +56,9 @@ const rowSelection = {
 
 function CandidatesTable() {
   return (
-    <div className="overflow-auto flex-1 h-full">
+    <div className="overflow-auto no-scrollbar flex-1 h-full">
       <Table
-        className="w-screen sm:w-full pr-0 sm:pr-8"
+        className="w-screen sm:w-full pr-0 sm:pr-8 h-screen"
         rowSelection={{
           type: "checkbox",
           ...rowSelection,
