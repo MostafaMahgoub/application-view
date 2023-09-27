@@ -3,11 +3,12 @@ import { Divider } from "antd";
 
 function TableHeader(){
     return(
-        <div className="flex flex-row">
+        <div className="flex flex-col sm:flex-row">
         <span className="text-[#1D4ED8] text-sm font-semibold font-poppins leading-6 break-words">
           247 Candidates
         </span>
         <div className="flex-grow" />
+        <div className="flex flex-row">
         <span className="text-[#1D4ED8] text-sm font-medium font-poppins leading-6 break-words">
           Qualified
         </span>
@@ -31,6 +32,7 @@ function TableHeader(){
             <div className="text-gray-700 text-xs font-poppins font-medium break-words">
               25
             </div>
+          </div>
           </div>
         </div>
       </div>
