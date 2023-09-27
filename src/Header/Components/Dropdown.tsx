@@ -1,26 +1,29 @@
 import { DownOutlined } from "@ant-design/icons";
-import { Divider, Dropdown, Menu, Space, Typography } from "antd";
+import { Dropdown, Menu, Space, Typography } from "antd";
+import React from "react";
 import { useState } from "react";
 
 interface MenuItemProps {
+  itemKey: string;
+  selectedKey: string;
   title: string;
   count: number;
 }
 
-function MenuItem({ title, count }: MenuItemProps) {
+const MenuItem = React.memo(({ itemKey, selectedKey, title, count }: MenuItemProps) => {
   return (
     <div className="flex flex-row justify-between">
-      <p className="text-black text-base font-poppins font-normal leading-6 break-words">
+      <p className={`text-base font-poppins font-normal leading-6 break-words ${selectedKey === itemKey ? "text-[#1D4ED8]" : "text-[#0B0B0B]"}`}>
         {title}
       </p>
-      <div className="px-2 py-1 h-fit bg-gray-200 rounded-xl flex justify-center items-center self-center gap-10">
-        <div className="text-gray-700 text-xs font-poppins font-medium break-words">
+      <div className={`px-2 py-1 h-fit bg-gray-200 rounded-xl flex justify-center items-center self-center gap-10 ${selectedKey === itemKey ? "bg-[#D1DDFF]" : "bg-gray-200"}`}>
+        <div className={`text-xs font-poppins font-medium break-words ${selectedKey === itemKey ? "text-[#1D4ED8]" : "text-[#444444]"}`}>
           {count}
         </div>
       </div>
     </div>
   );
-}
+});
 
 function DropdownMenu() {
   const [selectedKey, setSelectedKey] = useState("");
@@ -36,18 +39,15 @@ function DropdownMenu() {
     { key: "9", title: "Withdrawn", count: 25 },
   ];
 
-  const handleMenuClick = (e : any) => {
+  const handleMenuClick = (e: any) => {
     setSelectedKey(e.key);
   };
 
   const menu = (
     <Menu onClick={handleMenuClick}>
       {items.map((item) => (
-        <Menu.Item
-          key={item.key}
-          className={selectedKey === item.key ? "bg-blue-100" : ""}
-        >
-          <MenuItem title={item.title} count={item.count} />
+        <Menu.Item key={item.key} className={selectedKey === item.key ? "bg-[#EDF2FF]" : ""}>
+          <MenuItem itemKey={item.key} selectedKey={selectedKey} title={item.title} count={item.count} />
         </Menu.Item>
       ))}
     </Menu>
@@ -57,11 +57,7 @@ function DropdownMenu() {
     <Dropdown overlay={menu} trigger={["hover"]}>
       <Typography.Link>
         <Space className="bg-white rounded-xl pr-4 pl-4 h-10 w-60 flex justify-between shadow-lg hover:rounded-br-none">
-          <p
-            className={`text-blue-600 text-xs font-poppins font-bold leading-6 break-words ${
-              selectedKey ? "text-blue-600" : ""
-            }`}
-          >
+          <p className="text-blue-600 text-xs font-poppins font-bold leading-6 break-words">
             Opportunity Browsing
           </p>
           <DownOutlined className="text-xs" />
