@@ -60,7 +60,9 @@ interface CandidatesTableProps {
 
 function CandidatesTable({ searchText }: CandidatesTableProps) {
   const filteredData = data.filter((item) =>
-    item.Candidate.props.name.toLowerCase().includes(searchText.toLowerCase())
+    item.Candidate.props.name.toLowerCase().includes(searchText.toLowerCase()) ||
+    item.Candidate.props.education.toLowerCase().includes(searchText.toLowerCase()) ||
+    item.Candidate.props.country.toLowerCase().includes(searchText.toLowerCase())
   );
 
   return (
