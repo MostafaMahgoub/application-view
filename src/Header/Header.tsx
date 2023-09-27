@@ -10,7 +10,7 @@ import { Divider } from 'antd';
 
 function Header() {
   return (
-    <header className="mt-3 flex flex-col h-fit items-center gap-10 w-full mr-9 sm:flex-row sm:gap-20">
+    <header className="mt-3 flex flex-col h-fit items-center gap-10 w-98 mr-9 sm:flex-row sm:gap-20">
       <div>
       <h1 className="text-blue-600 text-2xl font-poppins font-semibold break-words">
         London Internship Program
