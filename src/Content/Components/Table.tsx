@@ -54,7 +54,15 @@ const rowSelection = {
   },
 };
 
-function CandidatesTable() {
+interface CandidatesTableProps {
+  searchText: string;
+}
+
+function CandidatesTable({ searchText }: CandidatesTableProps) {
+  const filteredData = data.filter((item) =>
+    item.Candidate.props.name.toLowerCase().includes(searchText.toLowerCase())
+  );
+
   return (
     <div className="overflow-auto no-scrollbar flex-1 h-full">
       <Table
@@ -64,7 +72,7 @@ function CandidatesTable() {
           ...rowSelection,
         }}
         columns={tableColumns}
-        dataSource={data}
+        dataSource={filteredData}
         pagination={false}
       />
     </div>

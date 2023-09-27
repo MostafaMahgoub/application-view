@@ -2,7 +2,13 @@ import { Input, Tooltip } from "antd";
 import { SearchOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import Filter from "./Filter";
 
-function SearchFilter() {
+interface SearchFilterProps {
+  searchText: string;
+  onSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+
+function SearchFilter({ searchText, onSearch } : SearchFilterProps) {
   return (
     <div className="w-96 h-fit flex flex-col gap-5">
       <Input
@@ -18,6 +24,8 @@ function SearchFilter() {
             />
           </Tooltip>
         }
+        value={searchText}
+        onChange={onSearch}
       />
       <Filter />
     </div>
