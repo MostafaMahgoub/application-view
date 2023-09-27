@@ -18,6 +18,7 @@ module.exports = {
       },
       width: {
         '98': '98%',
+        '70vw': '70vw',
       },
     },
   },
