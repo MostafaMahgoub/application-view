@@ -46,7 +46,14 @@ function TagCard({ children }: TextProps) {
   );
 }
 
-function CandidateCard() {
+interface CandidateCardProps {
+    name: string;
+    country: string; 
+    education: string;
+  }
+
+
+function CandidateCard({ name , country ,education }: CandidateCardProps) {
   return (
     <div className="flex flex-row gap-8">
       <Avatar
@@ -56,10 +63,10 @@ function CandidateCard() {
         MR
       </Avatar>
       <div className="flex flex-col gap-2">
-        <TextBase>Aaliyah Sanderson</TextBase>
-        <TextSmall>Riyadh, Saudi Arabia</TextSmall>
+        <TextBase>{name}</TextBase>
+        <TextSmall>{country}</TextSmall>
         <TextSmallLight>
-          Bachelor - Cambridge University (2023 - 2023)
+        {education}
         </TextSmallLight>
         <div className="flex flex-row gap-2">
           <TextSmallNormal>#top_candidate</TextSmallNormal>
