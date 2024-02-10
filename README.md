@@ -3,6 +3,10 @@
 This is a view application designed for recruiters or HR professionals. It allows them to view their candidates and categorize them.<br>
 **The key feature of this application is its ability to design a modern UI, which is created using Figma and implemented with React and Ant Design and deployed on vercel.**
 
+# Preview
+
+![Preview](ATS.png)
+
 ## Table of Contents
 - [Getting Started](#getting-started)
 - [Installation](#installation)
