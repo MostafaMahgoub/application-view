@@ -10,7 +10,6 @@ This is a view application designed for recruiters or HR professionals. It allow
 ## Table of Contents
 - [Getting Started](#getting-started)
 - [Installation](#installation)
-- [Endpoints](#endpoints)
 - [Contributing](#contributing)
 
 ## Getting Started
